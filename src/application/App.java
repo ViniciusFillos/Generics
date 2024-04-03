@@ -1,6 +1,7 @@
 package application;
 
 import services.PrintService;
+import services.PrintServiceString;
 
 import java.util.Scanner;
 
@@ -10,13 +11,13 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        PrintService ps = new PrintService();
+        PrintServiceString ps = new PrintServiceString();
 
         System.out.print("How many values? ");
         int n = sc.nextInt();
 
         for (int i = 0; i < n; i++) {
-            int value = sc.nextInt();
+            String value = sc.next();
             ps.addValue(value);
         }
 
