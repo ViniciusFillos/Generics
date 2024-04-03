@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PrintService {
 
-    private List<Integer> values = new ArrayList<>();
+    private List<Object> values = new ArrayList<>();
 
     public void print() {
         if (values.isEmpty()) {
@@ -15,7 +15,7 @@ public class PrintService {
         System.out.print(values.get(0));
 
         boolean first = true;
-        for (Integer i : values) {
+        for (Object i : values) {
             if (first) {
                 first = false;
             } else {
@@ -25,11 +25,11 @@ public class PrintService {
         System.out.println("]");
     }
 
-    public void addValue(int value) {
+    public void addValue(Object value) {
         values.add(value);
     }
 
-    public int first() {
+    public Object first() {
         if (values.isEmpty()) {
             throw new ArrayIndexOutOfBoundsException("The list of values can't be empty");
         }
