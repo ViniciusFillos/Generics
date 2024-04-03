@@ -3,9 +3,9 @@ package services;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PrintService {
+public class PrintService<T> {
 
-    private List<Object> values = new ArrayList<>();
+    private List<T> values = new ArrayList<>();
 
     public void print() {
         if (values.isEmpty()) {
@@ -25,11 +25,11 @@ public class PrintService {
         System.out.println("]");
     }
 
-    public void addValue(Object value) {
+    public void addValue(T value) {
         values.add(value);
     }
 
-    public Object first() {
+    public T first() {
         if (values.isEmpty()) {
             throw new ArrayIndexOutOfBoundsException("The list of values can't be empty");
         }
